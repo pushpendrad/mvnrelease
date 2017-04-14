@@ -214,7 +214,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>EmployeeApplication-${project.version}</finalName>
+		<finalName>EmployeeApplication</finalName>
 		<plugins>
 				<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -408,7 +408,7 @@
                   <timestamped>true</timestamped>
                   <dataSet>
                     <data>
-                      <src>${project.build.directory}/EmployeeApplication-${project.version}.war</src>
+                      <src>${project.build.directory}/EmployeeApplication.war</src>
                       <type>file</type>
                       <mapper>
                         <type>perm</type>
