@@ -1,0 +1,8 @@
+Package: deb
+Version: 1
+Section: misc
+Priority: low
+Architecture: all
+Description: This is a webapplication 
+Maintainer: pushpendra/parama
+Depends: default-jre | java8-runtime
