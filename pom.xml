@@ -412,7 +412,7 @@
                       <type>file</type>
                       <mapper>
                         <type>perm</type>
-                        <prefix>/opt/${project.artifactId}</prefix>
+                        <prefix>/opt/</prefix>
                       </mapper>
                     </data>
 					 </dataSet>
