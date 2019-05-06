@@ -1,4 +1,4 @@
-node {
+node('JavaAgent') {
         slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} started"
   
         stage('Checkout') {
