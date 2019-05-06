@@ -31,9 +31,9 @@ node('JavaAgent') {
  timeout(time:5, unit:'DAYS') {
     input message:'Approve deployment?', submitter: 'admin'
 }
-  //call(currentBuild.currentResult)
-  slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful"
-//slackSend baseUrl: 'https://jenkinsbuild.slack.com/services/hooks/jenkins-ci/', botUser: true, channel: '#jenkinsbuild', color: '#439FE0', failOnError: true, message: 'slack build failure', tokenCredentialId: 'jenkinsSlack'
+  call(currentBuild.currentResult)
+  //slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful"
+
 }
 
 def call(String buildResult) {
@@ -49,15 +49,6 @@ def call(String buildResult) {
   else {
     slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} its resulat was unclear"	
   }
-}
-
-
-void runTests(def args) {
-  /* Call the Maven build with tests. */
-  mvn "install -Dmaven.test.failure.ignore=true"
-
-  /* Archive the test results */
-  step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
 }
 
 
