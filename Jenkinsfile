@@ -12,22 +12,14 @@ node('JavaAgent') {
         }
         stage('Test') {
         // Testing Code
-          // runTests()
             sh "mvn install -Dmaven.test.failure.ignore=true"
             junit '**/target/surefire-reports/*.xml'
 
-  /* Archive the test results */
+        // Archive the test results 
             step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
-                 publishHTML (target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: 'coverage',
-                    reportFiles: 'index.html',
-                    reportName: "Junit Report"
-            ])
         }
         stage('SCA'){
+            //Performing Static Code Analysis    
             sh "mvn sonar:sonar -Dsonar.host.url=http://172.27.59.108:9000 "
         }
               
