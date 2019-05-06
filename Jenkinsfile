@@ -19,7 +19,7 @@ node('JavaAgent') {
             step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
         }
         stage('SCA'){
-            sh "mvn sonar:sonar -Dsonar.organization=pushpendrad-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${env.SCA_TOKEN}"
+            sh "mvn sonar:sonar -Dsonar.host.url=http://172.27.59.108:9000 "
         }
               
         
