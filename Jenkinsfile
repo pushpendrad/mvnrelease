@@ -26,7 +26,7 @@ node('JavaAgent') {
         
         stage('Archive Artifact') {
             // Archive Artifact after build
-          archiveArtifacts artifacts: 'target/EmployeeApplicationSprint4-1.0-SNAPSHOT.war'
+          archiveArtifacts artifacts: 'target/EmployeeApplication*.war'
         }
  timeout(time:5, unit:'DAYS') {
     input message:'Approve deployment?', submitter: 'admin'
