@@ -1,3 +1,2 @@
 # emsdockerhub
-EMS-1
-changes in jenkins session
+EMS-1 changes in jenkins session
