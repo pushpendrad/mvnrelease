@@ -20,7 +20,7 @@ node('JavaAgent') {
         }
         stage('SCA'){
                 //Performing Static Code Analysis    
-                sh "mvn sonar:sonar -Dsonar.host.url=http://172.27.59.108:9000 "
+                sh "mvn sonar:sonar -Dsonar.host.url=http://172.27.59.141:9000 "
         }
               
         
